@@ -75,7 +75,7 @@ class Node:
         if self.left is None:
             return self.data
         return self.left.find_min()
-        
+
 def build_tree(elements):
     root=Node(elements[0])
 
@@ -88,6 +88,7 @@ if __name__=='__main__':
     nameletters=['A','G','F','B']
     nameletters_tree=build_tree(nameletters)
     print(nameletters_tree.find_max())
+    print(nameletters_tree.find_min())
     print(nameletters_tree.in_order_traversal())
     print(nameletters_tree.search('A'))
     print(nameletters_tree.post_order_traversal())
