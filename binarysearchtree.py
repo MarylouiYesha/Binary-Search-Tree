@@ -17,15 +17,9 @@ class Node:
             if self.right:
                 self.right.add_child(value)
             else:
-                self.right = Node(value)    
-
-                if current.left == None:
-                    current.left = Node(value)
-                else:
-                    self.add(current.left, value)
-            else:
-                if current.right == None:
-                    current.right = Node(value)
-                else:
-                    self.add(current.right, value)
+                self.right = Node(value)
+                
+    def in_order_traversal(self):
+        elements=[]            
+              
 
