@@ -82,6 +82,7 @@ def build_tree(elements):
 if __name__=='__main__':
     nameletters=['A','G','F','B']
     nameletters_tree=build_tree(nameletters)
+    print(nameletters_tree.find_max())
     print(nameletters_tree.in_order_traversal())
     print(nameletters_tree.search('A'))
     print(nameletters_tree.post_order_traversal())
