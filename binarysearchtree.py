@@ -32,13 +32,12 @@ class Node:
 
         return elements            
               
-    
     def search(self,val):
         if self.value == val:
             return True
         if val < self.value:
             if self.left:
-                self.left.search(val)
+                return self.left.search(val)
             else:
                 return False
         if val > self.value:
@@ -46,6 +45,10 @@ class Node:
                 return self.right.search(val)
             else:
                 return False
+
+    def post_order_traversal(self):
+        elements = []
+        return elements
 
 def build_tree(elements):
     root=Node(elements[0])
