@@ -7,10 +7,14 @@ class Node:
     def add_child(self,value):
         if value == self.value:
             return
+        
+        if value < self.value:
+            if self.left:
+                pass
+            else:
+                self.left = Node(value)
 
-    def add(self, current, value):
-        if self.root == None:
-            self.root = Node(value)
+
         else:
             if value < current.value:
                 if current.left == None:
