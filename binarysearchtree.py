@@ -83,6 +83,7 @@ class Node:
         elif val > self.value:
             if self.right:
                 self.right = self.right.delete(val)
+                
         return self 
 
 def build_tree(elements):
