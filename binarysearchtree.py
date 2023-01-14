@@ -63,7 +63,7 @@ class Node:
             elements += self.left.pre_order_traversal()
         if self.right:
             elements += self.right.pre_order_traversal()
-            
+
         return elements
 
 def build_tree(elements):
@@ -80,3 +80,4 @@ if __name__=='__main__':
     print(nameletters_tree.in_order_traversal())
     print(nameletters_tree.search('A'))
     print(nameletters_tree.post_order_traversal())
+    print(nameletters_tree.pre_order_traversal())
