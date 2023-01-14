@@ -66,6 +66,29 @@ class Node:
 
         return elements
 
+    def delete(self, val):
+        if val < self.value:
+            if self.left:
+                self.left = self.left.delete(val)
+                
+        elif val > self.value:
+            if self.right:
+                self.right = self.right.delete(val)
+                
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.right
+
+            max_val = self.left.find_max()
+            self.value = max_val
+            self.left = self.left.delete(max_val)
+
+        return self 
+
     def find_max(self):
         if self.right is None:
             return self.value
@@ -76,26 +99,6 @@ class Node:
             return self.value
         return self.left.find_min()
 
-    def delete(self, val):
-        if val < self.value:
-            if self.left:
-                self.left = self.left.delete(val)
-        elif val > self.value:
-            if self.right:
-                self.right = self.right.delete(val)
-        else:
-            if self.left is None and self.right is None:
-                return None
-            elif self.left is None:
-                return self.right
-            elif self.right is None:
-                return self.right
-
-            max_val = self.left.find_max()
-            self.data = max_val
-            self.left = self.left.delete(max_val)
-
-        return self 
 
 def build_tree(elements):
     root=Node(elements[0])
@@ -117,7 +120,7 @@ if __name__=='__main__':
 
     search_letter=input("Input Search Letter:")
     print("Search Letter:",nameletters_tree.search(search_letter))
-    
+
     print("In Order Traversal:",nameletters_tree.in_order_traversal())
     print("Post Order Traversal:",nameletters_tree.post_order_traversal())
     print("Pre Order Traversal",nameletters_tree.pre_order_traversal())
