@@ -3,9 +3,10 @@ class Node:
        self.value = value
        self.left = None
        self.right =None 
-class BST:
-    def __init__(self):
-        self.root = None
+
+    def add_child(self,value):
+        if value == self.value:
+            return
 
     def add(self, current, value):
         if self.root == None:
