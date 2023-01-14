@@ -61,6 +61,8 @@ class Node:
         elements = [self.value]
         if self.left:
             elements += self.left.pre_order_traversal()
+        if self.right:
+            elements += self.right.pre_order_traversal()
             
         return elements
 
