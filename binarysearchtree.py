@@ -71,3 +71,4 @@ if __name__=='__main__':
     nameletters_tree=build_tree(nameletters)
     print(nameletters_tree.in_order_traversal())
     print(nameletters_tree.search('A'))
+    print(nameletters_tree.post_order_traversal())
