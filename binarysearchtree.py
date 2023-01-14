@@ -77,7 +77,9 @@ class Node:
         return self.left.find_min()
 
     def delete(self, val):
-        
+        if val < self.value:
+            if self.left:
+                self.left = self.left.delete(val)
         return self 
 
 def build_tree(elements):
