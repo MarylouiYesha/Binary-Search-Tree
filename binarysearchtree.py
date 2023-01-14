@@ -13,10 +13,12 @@ class Node:
                 self.left.add_child(value)
             else:
                 self.left = Node(value)
-
-
         else:
-            if value < current.value:
+            if self.right:
+                self.right.add_child(value)
+            else:
+                self.right = Node(value)    
+
                 if current.left == None:
                     current.left = Node(value)
                 else:
