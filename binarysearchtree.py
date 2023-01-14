@@ -48,6 +48,8 @@ class Node:
 
     def post_order_traversal(self):
         elements = []
+        if self.left:
+            elements += self.left.post_order_traversal()
         return elements
 
 def build_tree(elements):
