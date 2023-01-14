@@ -66,6 +66,11 @@ class Node:
 
         return elements
 
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
+
 def build_tree(elements):
     root=Node(elements[0])
 
