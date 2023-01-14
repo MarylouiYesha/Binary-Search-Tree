@@ -10,7 +10,7 @@ class Node:
         
         if value < self.value:
             if self.left:
-                pass
+                self.left.add_child(value)
             else:
                 self.left = Node(value)
 
