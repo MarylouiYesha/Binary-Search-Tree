@@ -53,10 +53,12 @@ class Node:
         if self.right:
             elements += self.right.post_order_traversal()
 
-        elements.append(self.data)
+        elements.append(self.value)
 
         return elements
 
+    def pre_order_traversal(self):
+        elements = [self.value]
 
 def build_tree(elements):
     root=Node(elements[0])
