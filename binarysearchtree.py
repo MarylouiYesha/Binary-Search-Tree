@@ -76,6 +76,10 @@ class Node:
             return self.data
         return self.left.find_min()
 
+    def delete(self, val):
+        
+        return self 
+
 def build_tree(elements):
     root=Node(elements[0])
 
