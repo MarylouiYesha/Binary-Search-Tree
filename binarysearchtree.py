@@ -91,6 +91,10 @@ class Node:
             elif self.right is None:
                 return self.right
 
+            max_val = self.left.find_max()
+            self.data = max_val
+            self.left = self.left.delete(max_val)
+            
         return self 
 
 def build_tree(elements):
