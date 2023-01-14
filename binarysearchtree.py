@@ -42,6 +42,10 @@ class Node:
             else:
                 return False
         if val > self.value:
+            if self.right:
+                return self.right.search(val)
+            else:
+                return False
 
 def build_tree(elements):
     root=Node(elements[0])
