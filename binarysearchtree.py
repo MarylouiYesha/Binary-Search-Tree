@@ -32,6 +32,11 @@ class Node:
 
         return elements            
               
+    
+    def search(self,val):
+        if self.data == val:
+            return True
+
 def build_tree(elements):
     root=Node(elements[0])
 
