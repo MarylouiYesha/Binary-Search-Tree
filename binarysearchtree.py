@@ -59,6 +59,10 @@ class Node:
 
     def pre_order_traversal(self):
         elements = [self.value]
+        if self.left:
+            elements += self.left.pre_order_traversal()
+            
+        return elements
 
 def build_tree(elements):
     root=Node(elements[0])
