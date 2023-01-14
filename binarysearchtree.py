@@ -34,8 +34,14 @@ class Node:
               
     
     def search(self,val):
-        if self.data == val:
+        if self.value == val:
             return True
+        if val < self.value:
+            if self.left:
+                self.left.search(val)
+            else:
+                return False
+        if val > self.value:
 
 def build_tree(elements):
     root=Node(elements[0])
