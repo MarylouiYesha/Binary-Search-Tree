@@ -94,7 +94,7 @@ class Node:
             max_val = self.left.find_max()
             self.data = max_val
             self.left = self.left.delete(max_val)
-            
+
         return self 
 
 def build_tree(elements):
@@ -108,6 +108,7 @@ def build_tree(elements):
 if __name__=='__main__':
     nameletters=['A','G','F','B']
     nameletters_tree=build_tree(nameletters)
+    nameletters_tree.delete('')
     print(nameletters_tree.find_max())
     print(nameletters_tree.find_min())
     print(nameletters_tree.in_order_traversal())
