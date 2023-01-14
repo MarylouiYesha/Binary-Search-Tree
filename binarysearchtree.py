@@ -24,7 +24,8 @@ class Node:
 
         if self.left:
             elements += self.left.in_order_traversal()
-
+        
+        elements.append(self.value)
 
         return elements            
               
