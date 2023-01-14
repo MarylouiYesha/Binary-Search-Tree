@@ -20,6 +20,8 @@ class Node:
                 self.right = Node(value)
                 
     def in_order_traversal(self):
-        elements=[]            
+        elements=[]
+
+        return elements            
               
 
