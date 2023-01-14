@@ -68,12 +68,12 @@ class Node:
 
     def find_max(self):
         if self.right is None:
-            return self.data
+            return self.value
         return self.right.find_max()
 
     def find_min(self):
         if self.left is None:
-            return self.data
+            return self.value
         return self.left.find_min()
 
     def delete(self, val):
@@ -106,12 +106,23 @@ def build_tree(elements):
     return root
 
 if __name__=='__main__':
-    nameletters=['A','G','F','B']
+    nameletters=input("Input Name:")
+
+    
     nameletters_tree=build_tree(nameletters)
-    nameletters_tree.delete('')
-    print(nameletters_tree.find_max())
-    print(nameletters_tree.find_min())
-    print(nameletters_tree.in_order_traversal())
-    print(nameletters_tree.search('A'))
-    print(nameletters_tree.post_order_traversal())
-    print(nameletters_tree.pre_order_traversal())
+
+    print("Input Letters:",nameletters)
+    print("Max:",nameletters_tree.find_max())
+    print("Min:",nameletters_tree.find_min())
+
+    search_letter=input("Input Search Letter:")
+    print("Search Letter:",nameletters_tree.search(search_letter))
+    
+    print("In Order Traversal:",nameletters_tree.in_order_traversal())
+    print("Post Order Traversal:",nameletters_tree.post_order_traversal())
+    print("Pre Order Traversal",nameletters_tree.pre_order_traversal())
+
+    del_letter=input("Delete Letter:")
+    nameletters_tree.delete(del_letter)
+    print("After Deleting:",nameletters_tree.in_order_traversal())
+    
